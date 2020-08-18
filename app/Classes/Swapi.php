@@ -35,7 +35,7 @@ class Swapi
      *
      * @return array|\Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function import($endpoint)
+    public function request($endpoint)
     {
         if ( ! in_array($endpoint, $this->apiEndpoints()))
         {
@@ -54,6 +54,22 @@ class Swapi
         }
 
         return $result;
+    }
+
+    /**
+     * Getting the ID from an url.
+     *
+     * @param $url
+     *
+     * @return mixed|string
+     */
+    public function fetchIdFromUrl($url)
+    {
+        // Trim the last formward slash from the url
+        $segments = explode('/', rtrim($url, '/'));
+
+        // Return the last segment
+        return end($segments);
     }
 
     /**
