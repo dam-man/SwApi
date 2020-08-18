@@ -14,6 +14,8 @@ class CreatePersonsTable extends Migration
     public function up()
     {
         Schema::create('persons', function (Blueprint $table) {
+            $table->charset   = 'utf8mb4';
+            $table->collation = 'utf8mb4_unicode_ci';
             $table->id();
             $table->string('name', 255)->default(null);
             $table->string('height', 50)->default(null);
