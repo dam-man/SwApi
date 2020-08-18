@@ -32,11 +32,10 @@ class Swapi
      * Import data from the API, we're using the same code for detailed and list function as the API endpoint are all the same.
      *
      * @param         $endpoint
-     * @param   null  $page
      *
      * @return array|\Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function import($endpoint, $page = null)
+    public function import($endpoint)
     {
         if ( ! in_array($endpoint, $this->apiEndpoints()))
         {
@@ -45,8 +44,8 @@ class Swapi
 
         $result = [];
 
-        $data   = json_decode($this->getDatafromTheApi($endpoint));
-        $pages  = ceil($data->count / count($data->results));
+        $data  = json_decode($this->getDatafromTheApi($endpoint));
+        $pages = ceil($data->count / count($data->results));
 
         for ($page = 1; $page <= $pages; $page++)
         {
