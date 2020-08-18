@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Routes to import data from the API.
+Route::get('/api/import/people', 'PersonController@import');
