@@ -36,6 +36,6 @@ class PersonController extends Controller
             $people->save();
         }
 
-        dd($persons);
+        return redirect('/')->with('success', 'People has been imported from the starwars API.');
     }
 }
