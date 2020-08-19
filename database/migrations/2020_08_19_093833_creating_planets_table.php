@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePlanetsTable extends Migration
+class CreatingPlanetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,12 +19,12 @@ class CreatePlanetsTable extends Migration
             $table->string('climate', 255)->nullable();
             $table->string('terrain', 255)->nullable();
             $table->integer('diameter')->default(0);
-            $table->integer('population')->default(0);
+            $table->bigInteger('population')->default(0);
             $table->mediumInteger('rotation_period')->default(0);
             $table->mediumInteger('orbital_period')->default(0);
             $table->smallInteger('surface_water')->default(0);
-            $table->string('created', 255);
-            $table->string('edited', 255);
+            $table->string('created', 255)->nullable();
+            $table->string('edited', 255)->nullable();
             $table->timestamps();
         });
     }
