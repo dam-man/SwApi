@@ -20,3 +20,4 @@ Route::get('/', function () {
 // Routes to import data from the API.
 Route::get('/api/import/people', 'PersonController@import');
 Route::get('/api/import/planets', 'PlanetController@import');
+Route::get('/api/import/species', 'SpecieController@import');
