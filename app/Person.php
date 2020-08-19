@@ -18,4 +18,13 @@ class Person extends Model
         'updated_at',
     ];
 
+    /**
+     * A person belongs to a planet, lets assign it here so we can use it in ORM.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function planet()
+    {
+        return $this->belongsTo(Planet::class);
+    }
 }
