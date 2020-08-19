@@ -21,7 +21,8 @@ class PlanetController extends Controller
         {
             $id = $api->fetchIdFromUrl($planet->url);
 
-            $people                  = Planet::query()->firstOrCreate(['id' => $id]);
+            $people                  = Planet::query()->firstOrCreate(['planet_id' => $id]);
+            $people->planet_id       = $id;
             $people->name            = $planet->name;
             $people->climate         = $planet->climate;
             $people->terrain         = $planet->terrain;

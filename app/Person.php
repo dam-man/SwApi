@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Specie;
 use Illuminate\Database\Eloquent\Model;
 
 class Person extends Model
@@ -14,17 +15,18 @@ class Person extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'planet_id', 'name', 'height', 'mass', 'hair_color', 'skin_color', 'eye_color', 'birth_year', 'gender', 'created', 'edited', 'created_at',
+        'id', 'planet_id', 'people_id', 'name', 'height', 'mass', 'hair_color', 'skin_color', 'eye_color', 'birth_year', 'gender', 'created', 'edited',
+        'created_at',
         'updated_at',
     ];
 
     /**
-     * A person belongs to a planet, lets assign it here so we can use it in ORM.
+     * A planet belongs to a people, lets assign it here so we can use it in ORM.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function planet()
     {
-        return $this->belongsTo(Planet::class);
+        return $this->belongsTo(Planet::class, 'planet_id', 'planet_id');
     }
 }

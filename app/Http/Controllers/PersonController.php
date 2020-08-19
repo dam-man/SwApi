@@ -20,7 +20,7 @@ class PersonController extends Controller
         {
             $id = $api->fetchIdFromUrl($person->url);
 
-            $people             = Person::query()->firstOrCreate(['id' => $id]);
+            $people             = Person::query()->firstOrCreate(['people_id' => $id]);
             $people->planet_id  = $api->fetchIdFromUrl($person->homeworld);
             $people->name       = $person->name;
             $people->height     = $person->height;

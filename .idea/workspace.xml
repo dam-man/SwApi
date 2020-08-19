@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56f4113b-556b-4f00-bbb8-32af5b2ae024" name="Default Changelist" comment="">
+    <list default="true" id="56f4113b-556b-4f00-bbb8-32af5b2ae024" name="Default Changelist" comment="Added planet controller and model&#10;Added routing to the web routes &#10;Changed the welcome blade">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PersonController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PersonController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PlanetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PlanetController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SpecieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SpecieController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Person.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Person.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Planet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Planet.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_19_093833_creating_planets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_19_093833_creating_planets_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_19_093844_creating_persons_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_19_093844_creating_persons_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +141,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/migrations" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -147,6 +154,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\it-tester\database\migrations" />
       <recent name="C:\wamp64\www\it-tester" />
     </key>
   </component>
@@ -168,7 +176,9 @@
       <updated>1597674079284</updated>
       <workItem from="1597674110046" duration="1019000" />
       <workItem from="1597752710310" duration="559000" />
-      <workItem from="1597753613070" duration="15260000" />
+      <workItem from="1597753613070" duration="16787000" />
+      <workItem from="1597828709819" duration="2322000" />
+      <workItem from="1597836857501" duration="7068000" />
     </task>
     <task id="LOCAL-00001" summary="Added Swapi Api Class to obtain data from the Starwars Api">
       <created>1597762046585</created>
@@ -240,7 +250,56 @@
       <option name="project" value="LOCAL" />
       <updated>1597782094363</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added planets migration file">
+      <created>1597782771309</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1597782771309</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Updated planets migration file">
+      <created>1597782959054</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1597782959054</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Refactored the migrations for the first install.">
+      <created>1597830585497</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1597830585498</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Refactored the migrations for the first install - Planets table">
+      <created>1597830697889</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1597830697889</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added planet controller and model&#10;Added routing to the web routes &#10;Changed the welcome blade">
+      <created>1597830980113</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1597830980113</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added Specie Section - Import/Migration/Model and Controller">
+      <created>1597844574482</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1597844574482</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Changed database settings to InnoDb">
+      <created>1597845042078</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1597845042078</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,25 +316,42 @@
     <MESSAGE value="Added Person Controller and Model to save the data from the API." />
     <MESSAGE value="Added route and changed url in the welcome blade to inittiate the request." />
     <MESSAGE value="Added redirect to the person controller after saving the data." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added redirect to the person controller after saving the data." />
+    <MESSAGE value="Added planets migration file" />
+    <MESSAGE value="Updated planets migration file" />
+    <MESSAGE value="Refactored the migrations for the first install." />
+    <MESSAGE value="Refactored the migrations for the first install - Planets table" />
+    <MESSAGE value="Added planet controller and model&#10;Added routing to the web routes &#10;Changed the welcome blade" />
+    <MESSAGE value="Added Specie Section - Import/Migration/Model and Controller" />
+    <MESSAGE value="Changed database settings to InnoDb" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed database settings to InnoDb" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1597758216549">
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1597848546795">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040/3840.0.1920.1040@0.0.1920.1040" timestamp="1597758216549" />
-    <state x="591" y="91" key="CommitChangelistDialog2" timestamp="1597782090144">
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040/3840.0.1920.1040@0.0.1920.1040" timestamp="1597848546795" />
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597783039711" />
+    <state x="591" y="91" key="CommitChangelistDialog2" timestamp="1597845027601">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="591" y="91" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040/3840.0.1920.1040@0.0.1920.1040" timestamp="1597762037334" />
-    <state x="591" y="91" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1597782090144" />
+    <state x="591" y="91" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040/3840.0.1920.1040@0.0.1920.1040" timestamp="1597845027601" />
+    <state x="591" y="91" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1597782954659" />
     <state x="767" y="243" key="NewPhpClassDialog" timestamp="1597761893071">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="767" y="243" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040/3840.0.1920.1040@0.0.1920.1040" timestamp="1597761893071" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1597782097561">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1597845046623">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1597782097561" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040/3840.0.1920.1040@0.0.1920.1040" timestamp="1597845046623" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1597782984715" />
+    <state x="669" y="231" width="581" height="578" key="find.popup" timestamp="1597844390843">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="669" y="231" width="581" height="578" key="find.popup/0.0.1920.1040/1920.0.1920.1040/3840.0.1920.1040@0.0.1920.1040" timestamp="1597844390843" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1597829810504">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040/3840.0.1920.1040@0.0.1920.1040" timestamp="1597829810504" />
   </component>
 </project>
