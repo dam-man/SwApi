@@ -21,6 +21,7 @@ class CreatingPersonsTable extends Migration
 
             // Setup tables
             $table->id();
+            $table->integer('people_id')->default(0);
             $table->integer('planet_id')->default(0);
             $table->string('name', 255)->default(null)->nullable();
             $table->string('height', 50)->default(null)->nullable();
@@ -33,9 +34,6 @@ class CreatingPersonsTable extends Migration
             $table->string('created', 75)->default(null)->nullable();
             $table->string('edited', 75)->default(null)->nullable();
             $table->timestamps();
-
-            // Setting references
-            $table->foreign('planet_id')->references('id')->on('planets');
         });
     }
 

@@ -15,6 +15,7 @@ class CreatingPlanetsTable extends Migration
     {
         Schema::create('planets', function (Blueprint $table) {
             $table->id();
+            $table->integer('planet_id')->unique()->nullable();
             $table->string('name', 255)->nullable();
             $table->string('climate', 255)->nullable();
             $table->string('terrain', 255)->nullable();
