@@ -50,7 +50,7 @@ class SpecieController extends Controller
             }
         }
 
-        return redirect('/home')->with('success', 'People has been imported from the starwars API.');
+        return redirect('/home')->with('success', 'Species has been imported from the starwars API.');
     }
 
     private function updatePeopleToSpecieTable($specie_id, $people)

@@ -14,6 +14,18 @@
                         </div>
                     @endif
 
+                        @if (session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+
+                        @if (session('failure'))
+                            <div class="alert alert-warning">
+                                {{ session('failure') }}
+                            </div>
+                        @endif
+
                         <div class="links">
                             <a class="btn btn-sm btn-success" href="{{url('api/import/people')}}">Import People</a>
                             <a class="btn btn-sm btn-success" href="{{url('api/import/planets')}}">Import Planets</a>

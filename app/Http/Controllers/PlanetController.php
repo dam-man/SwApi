@@ -37,6 +37,6 @@ class PlanetController extends Controller
             $people->save();
         }
 
-        return redirect('/home')->with('success', 'People has been imported from the starwars API.');
+        return redirect('/home')->with('success', 'Planets has been imported from the starwars API.');
     }
 }
