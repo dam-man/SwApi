@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Specie;
 use Illuminate\Http\Request;
+use App\Person;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $people = Person::with('planet')
+                        ->paginate();
+
+        return view('home', compact(['people']));
     }
 }

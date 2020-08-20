@@ -31,12 +31,10 @@ class Person extends Model
     }
 
     /**
-     * A person belongs to a specie.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function specie()
     {
-        return $this->belongsTo(Specie::class, 'people_id', 'people_id');
+        return $this->belongsToMany(Specie::class, 'species_to_people', 'people_id', 'people_id');
     }
 }
