@@ -81,13 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="{{url('api/import/people')}}">Import People</a>
-                    <a href="{{url('api/import/planets')}}">Import Planets</a>
-                    <a href="{{url('api/import/species')}}">Import Species</a>
+                    Starwars API
                 </div>
             </div>
         </div>

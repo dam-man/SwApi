@@ -14,7 +14,11 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                        <div class="links">
+                            <a class="btn btn-sm btn-success" href="{{url('api/import/people')}}">Import People</a>
+                            <a class="btn btn-sm btn-success" href="{{url('api/import/planets')}}">Import Planets</a>
+                            <a class="btn btn-sm btn-success" href="{{url('api/import/species')}}">Import Species</a>
+                        </div>
                 </div>
             </div>
         </div>

@@ -15,7 +15,7 @@ class SpecieController extends Controller
 
         if (empty($species = $api->request('species')))
         {
-            return redirect('/')->with('failure', 'Could not fetch data from the API, please try again.');
+            return redirect('/home')->with('failure', 'Could not fetch data from the API, please try again.');
         }
 
         // Remove current items.
@@ -45,12 +45,12 @@ class SpecieController extends Controller
             {
                 if(!$this->updatePeopleToSpecieTable($id, $specie->people))
                 {
-                    return redirect('/')->with('failure', 'Could not import species to people from the API.');
+                    return redirect('/home')->with('failure', 'Could not import species to people from the API.');
                 }
             }
         }
 
-        return redirect('/')->with('success', 'People has been imported from the starwars API.');
+        return redirect('/home')->with('success', 'People has been imported from the starwars API.');
     }
 
     private function updatePeopleToSpecieTable($specie_id, $people)
