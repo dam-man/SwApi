@@ -17,6 +17,11 @@ class Specie extends Model
         'updated_at',
     ];
 
+    /**
+     * Relations to people
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function people()
     {
         return $this->belongsToMany(Person::class, 'species_to_people', 'people_id', 'people_id');

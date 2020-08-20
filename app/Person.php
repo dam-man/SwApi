@@ -30,6 +30,11 @@ class Person extends Model
         return $this->belongsTo(Planet::class, 'planet_id', 'planet_id');
     }
 
+    /**
+     * A person belongs to a specie.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function specie()
     {
         return $this->belongsTo(Specie::class, 'people_id', 'people_id');
