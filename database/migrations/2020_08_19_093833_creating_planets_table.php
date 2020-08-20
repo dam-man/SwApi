@@ -14,6 +14,12 @@ class CreatingPlanetsTable extends Migration
     public function up()
     {
         Schema::create('planets', function (Blueprint $table) {
+
+            // Setting Collations
+            $table->charset   = 'utf8mb4';
+            $table->collation = 'utf8mb4_unicode_ci';
+
+            // Setup tables
             $table->id();
             $table->integer('planet_id')->unique()->nullable();
             $table->string('name', 255)->nullable();

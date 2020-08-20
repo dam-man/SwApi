@@ -14,6 +14,12 @@ class CreateSpeciesTable extends Migration
     public function up()
     {
         Schema::create('species', function (Blueprint $table) {
+
+            // Setting Collations
+            $table->charset   = 'utf8mb4';
+            $table->collation = 'utf8mb4_unicode_ci';
+
+            // Setup tables
             $table->id();
             $table->string('name', 255)->nullable();
             $table->string('classification', 255)->nullable();
