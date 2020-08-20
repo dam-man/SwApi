@@ -16,4 +16,9 @@ class Specie extends Model
         'language', 'created', 'edited', 'created_at',
         'updated_at',
     ];
+
+    public function people()
+    {
+        return $this->belongsToMany(Person::class, 'species_to_people', 'people_id', 'people_id');
+    }
 }
